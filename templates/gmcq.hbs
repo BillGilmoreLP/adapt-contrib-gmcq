@@ -7,8 +7,8 @@
     {{#each _items}}
     <div class="m-gmcq__item js-mcq-item item-{{@index}}{{#unless ../_isEnabled}}{{#if ../_canShowMarking}}{{#if _isCorrect}} is-correct{{else}} is-incorrect{{/if}}{{/if}}{{/unless}}">
 
-      <input class="m-gmcq__item-input js-mcq-item-input" type="checkbox" id="{{../_id}}-{{@index}}" {{#unless ../_isEnabled}} disabled{{/unless}} aria-label="{{a11y_normalize text}} {{_graphic.alt}}"/>
-      <label class="m-gmcq__item-label js-mcq-item-label{{#unless ../_isEnabled}} is-disabled{{/unless}}{{#if _isSelected}} is-selected{{/if}} a11y-ignore" id="{{../_id}}-{{@index}}-aria" for="{{../_id}}-{{@index}}" aria-hidden="true" tabindex="-1">
+      <input class="m-gmcq__item-input js-item-input" type="checkbox" id="{{../_id}}-{{@index}}" {{#unless ../_isEnabled}} disabled{{/unless}} aria-label="{{a11y_normalize text}} {{_graphic.alt}}"/>
+      <label class="m-gmcq__item-label js-item-label{{#unless ../_isEnabled}} is-disabled{{/unless}}{{#if _isSelected}} is-selected{{/if}} a11y-ignore" id="{{../_id}}-{{@index}}-aria" for="{{../_id}}-{{@index}}" aria-hidden="true" tabindex="-1">
 
         <img class="m-gmcq__item-image" src="{{_graphic.src}}" data-large="{{_graphic.large}}" data-small="{{_graphic.small}}"/>
 

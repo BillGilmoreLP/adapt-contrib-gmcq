@@ -6,10 +6,10 @@ define([
   var Gmcq = Mcq.view.extend({
 
     events: {
-      'focus .js-mcq-item-input': 'onItemFocus',
-      'blur .js-mcq-item-input': 'onItemBlur',
-      'change .js-mcq-item-input': 'onItemSelected',
-      'keyup .js-mcq-item-input': 'onKeyPress'
+      'focus .js-item-input': 'onItemFocus',
+      'blur .js-item-input': 'onItemBlur',
+      'change .js-item-input': 'onItemSelected',
+      'keyup .js-item-input': 'onKeyPress'
     },
 
     onItemSelected: function(event) {
@@ -37,7 +37,7 @@ define([
       this.resizeImage(Adapt.device.screenSize);
       this.setUpColumns();
 
-      this.$('.js-mcq-item-label').imageready(_.bind(function() {
+      this.$('.js-item-label').imageready(_.bind(function() {
         this.setReadyStatus();
       }, this));
 
@@ -50,7 +50,7 @@ define([
     resizeImage: function(width) {
       var imageWidth = width === 'medium' ? 'small' : width;
 
-      this.$('.js-mcq-item-label').each(function(index) {
+      this.$('.js-item-label').each(function(index) {
         var $img = $(this).find('img');
         var newSrc = $img.attr('data-' + imageWidth);
         if (newSrc) {
